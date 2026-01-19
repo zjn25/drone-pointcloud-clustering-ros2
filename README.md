@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # dbscan_clustering 点云聚类与跟踪节点
 
 本项目基于 ROS、Open3D 和 DBSCAN 实现了激光雷达点云的高效聚类与跨帧目标跟踪，适用于机器人环境感知、动态目标检测等场景。  
@@ -91,3 +92,4 @@ sudo apt install ros-<distro>-tf2-ros ros-<distro>-sensor-msgs ros-<distro>-visu
 ---
 
 如有问题欢迎提issue或交流！
+=======

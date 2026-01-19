@@ -123,12 +123,12 @@ class PointCloudClusteringNode:
         self.eps = rospy.get_param('~eps', 0.4)  
         self.min_points = rospy.get_param('~min_points', 8)  
         self.max_points = rospy.get_param('~max_points', 1000)
-        self.min_cluster_size = rospy.get_param('~min_cluster_size', 15)  # 
+        self.min_cluster_size = rospy.get_param('~min_cluster_size', 5)  # 
         
         # 点云预处理参数
         self.voxel_size = rospy.get_param('~voxel_size', 0.08)  
-        self.z_min = rospy.get_param('~z_min', -0.8)
-        self.z_max = rospy.get_param('~z_max', 1.5)
+        self.z_min = rospy.get_param('~z_min', -10.0)
+        self.z_max = rospy.get_param('~z_max', 100.0)
         self.radius_filter = rospy.get_param('~radius_filter', 5.0)
         
         # 聚类跟踪器
@@ -139,7 +139,7 @@ class PointCloudClusteringNode:
         )
         
         # 订阅者和发布者
-        self.pc_subscriber = rospy.Subscriber('/livox/lidar', PointCloud2, self.pointcloud_callback, queue_size=1)
+        self.pc_subscriber = rospy.Subscriber('/lq_lidar_pointcloud', PointCloud2, self.pointcloud_callback, queue_size=1)
         self.cluster_publisher = rospy.Publisher('/pointcloud_clusters', MarkerArray, queue_size=1)
         self.filtered_pc_publisher = rospy.Publisher('/filtered_pointcloud', PointCloud2, queue_size=1)
         
