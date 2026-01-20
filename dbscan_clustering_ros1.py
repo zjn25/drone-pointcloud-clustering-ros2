@@ -149,8 +149,7 @@ class PointCloudClusteringNode:
         
         rospy.loginfo("改进版点云聚类节点已启动")
         rospy.loginfo(f"聚类参数: eps={self.eps}, min_points={self.min_points}")
-        rospy.loginfo(f"预处理参数: voxel_size={self.voxel_size}, z_range=[{self.z_min}, {self.z_max}]")
-        rospy.loginfo(f"为了测试合并功能而添加的")
+        rospy.loginfo(f"预处理参数: voxel_size={self.voxel_size}, z_range=[{self.z_min}, {self.z_max}]")        
 
     def pointcloud_callback(self, msg):
         try:
